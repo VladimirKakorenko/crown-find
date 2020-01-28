@@ -1,0 +1,25 @@
+<div class="product-card-form flex-column">
+  <app-base-text-field label="Name"
+                       [control]="nameControl">
+  </app-base-text-field>
+  <app-base-text-field label="Cash"
+                       [control]="cashControl">
+  </app-base-text-field>
+  <app-base-text-field label="Description"
+                       [control]="descriptionControl">
+  </app-base-text-field>
+  <app-base-text-field label="Video"
+                       [control]="videoUrlControl">
+  </app-base-text-field>
+
+  <mat-form-field>
+    <mat-label>Expiration date</mat-label>
+    <input matInput
+           [matDatepicker]="picker"
+           [formControl]="expirationDateControl">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+
