@@ -1,25 +1,34 @@
-<div class="product-card-form flex-column">
-  <app-base-text-field label="Name"
-                       [control]="nameControl">
-  </app-base-text-field>
-  <app-base-text-field label="Cash"
-                       [control]="cashControl">
-  </app-base-text-field>
-  <app-base-text-field label="Description"
-                       [control]="descriptionControl">
-  </app-base-text-field>
-  <app-base-text-field label="Video"
-                       [control]="videoUrlControl">
-  </app-base-text-field>
+<div class="product-card-form flex-row">
+  <div class="flex-column">
+    <app-base-text-field label="Name"
+                         [control]="nameControl">
+    </app-base-text-field>
+    <app-base-text-field label="Cash"
+                         [control]="cashControl">
+    </app-base-text-field>
+    <app-base-text-field label="Description"
+                         [control]="descriptionControl">
+    </app-base-text-field>
+    <app-base-text-field label="Video"
+                         [control]="videoUrlControl">
+    </app-base-text-field>
 
-  <mat-form-field>
-    <mat-label>Expiration date</mat-label>
-    <input matInput
-           [matDatepicker]="picker"
-           [formControl]="expirationDateControl">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Expiration date</mat-label>
+      <input matInput
+             [matDatepicker]="picker"
+             [formControl]="expirationDateControl">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="flex-column">
+    <app-image-dnd (file)="handleFile($event)"></app-image-dnd>
+    <img class="product-card-form__image-preview" #imageElement
+         alt="project image">
+  </div>
+  <button mat-stroked-button>{{submitText}}</button>
+  <button mat-stroked-button>CANCEL</button>
 </div>
 
 

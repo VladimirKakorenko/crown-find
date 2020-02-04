@@ -7,4 +7,7 @@ import { ProjectCardFormComponent } from './project-card-form.component';
   styleUrls: ['./project-card-form.component.scss'],
 })
 export class CreateProjectCardComponent extends ProjectCardFormComponent {
+  get submitText(): string {
+    return 'Create';
+  }
 }

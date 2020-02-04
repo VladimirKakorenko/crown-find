@@ -5,6 +5,7 @@ export class Project {
   constructor(
     public name: string,
     public cash: number,
+    public currentCash: number,
     public description: string,
     public imageUrl: string,
     public videoUrl: string,
